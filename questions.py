@@ -11,7 +11,26 @@ words = [
     "lista",
 ]
 
-word = random.choice(words)
+Diccpalabras = {
+    "conceptos generales": ["programa", "funcion"],
+    "lenguajes de programacion": ["python"],
+    "estructuras": ["bucle", "variable"],
+    "tipos de dato": ["cadena", "entero", "lista"]
+}
+
+print("Categorias disponibles:")
+for clave in Diccpalabras:
+    print(f"- {clave}") 
+
+eleccionDelUsuario = input("seleccioná una categoria: ").lower()
+while eleccionDelUsuario not in Diccpalabras:
+    print("Categoria invalida, proba de nuevo.")
+    eleccionDelUsuario = input("Elegi una categoria: ").lower()
+
+word = random.choice(Diccpalabras[eleccionDelUsuario])
+
+
+
 guessed = []
 attempts = 6
 
